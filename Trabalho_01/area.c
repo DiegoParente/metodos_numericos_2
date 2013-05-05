@@ -19,3 +19,4 @@ double area(double a, double b, double tolerance, double (*f)(double)){
 	}while(var > tolerance);
 	return area;
 }
+
