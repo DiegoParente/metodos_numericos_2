@@ -1,6 +1,7 @@
 #ifndef SPECIAL_QUADRATURES_H
 #define SPECIAL_QUADRATURES_H
 #include <math.h>
+#define PI 3.14159265358979323846
 double integrate(int opc, int points, double(*f)(double));
 
 double two_points_gauss_hermite(double(*f)(double));

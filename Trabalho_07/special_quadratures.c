@@ -35,17 +35,17 @@ double four_points_gauss_hermite(double(*f)(double)){return 0.08131283*f(-1.6506
 double five_points_gauss_hermite(double(*f)(double)){return 0.01995324*f(-2.02018287) + 0.01995324*f(2.02018287) + 0.39361932*f(-0.95857246) + 0.39361932*f(0.95857246) + 0.94530872*f(0.0);}
 
 double two_points_gauss_laguerre(double(*f)(double)){return 0.85355339*f(0.58578643) + 0.14644660*f(3.41421356);}
-double three_points_gauss_laguerre(double(*f)(double)){	return 0.71109300*f(0.41577455) + 0.27851773*f(2.29428036) + 0.010389256*f(6.28994508);}
-double four_points_gauss_laguerre(double(*f)(double)){return  0.60315410*f(0.32254768) + 0.35741869*f(1.74576110) + 0.038887908*f(4.53662029) + 0.00053929470*f(9.39507091);}
+double three_points_gauss_laguerre(double(*f)(double)){	return 0.71109300*f(0.41577455) + 0.27851973*f(2.24428036) + 0.01038926*f(6.28994508);}
+double four_points_gauss_laguerre(double(*f)(double)){return  0.60315410*f(0.32254768) + 0.35741869*f(1.74576110) + 0.03888791*f(4.53662029) + 0.00053929470*f(9.39507091);}
 
 
 double gauss_chebyshev(int points, double(*f)(double)){
-	double w =  (double)M_PI/points;
+	double w =  (double)PI/(double)points;
 	int it;
 	double area = 0.0;
 	for(it = 1; it<=points; it++){
-		double x =  cos(((double)it - 0.5)*w);
-		area+=w*f(x);
+		double x =  cos(((double)it-0.5) * PI/points);
+		area+=f(x);
 	}
-	return area;
+	return area*w;
 }
