@@ -18,7 +18,7 @@ if(type == 3)
 
 }
 
-double upper_right_filter(double x, double y, double h, double (*f)(double, double)){
+double upper_left_filter(double x, double y, double h, double (*f)(double, double)){
 	return seven_points_diff(0, 1, x, y, h, f) + seven_points_diff(1, 1, x, y, h, f);
 }
 
